@@ -1,5 +1,9 @@
-`timescale 10ps/1ps
+/*
+    TI-ADC Verilog Model 
+    2026-01-29 version 1.0 without periodic calibration
+*/
 
+`timescale 10ps/1ps
 module adc_model#(
     parameter CHANNELS = 32,  // number of channels
     parameter DATAWIDTH = 8,  // resolution of adc

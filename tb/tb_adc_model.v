@@ -1,3 +1,8 @@
+/*
+    testbench for TI-ADC Verilog Model 
+    2026-01-29 version 1.0 without periodic calibration
+    imitate controller
+*/
 //`include "../rtl/adc_model.v"
 `timescale 10ps/1ps
 module tb_adc_model;
