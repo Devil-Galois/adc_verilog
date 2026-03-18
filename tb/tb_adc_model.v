@@ -18,6 +18,10 @@ reg clk_25G; //25G clock input
 reg rst_n; // active low reset
 reg calib_start; // start calibration
 reg adc_run; // start adc
+reg clkp_8G_io;
+reg clkn_8G_io;
+reg data_p_io;
+reg data_n_io;
 
 // output signals
 wire adc_ready; // adc is ready
@@ -34,6 +38,11 @@ adc_model #(.CHANNELS(CHANNELS),
             .GAIN_CAL_WIDTH(GAIN_CAL_WIDTH),
             .DESKEW_CAL_WIDTH(DESKEW_CAL_WIDTH)
 ) u_adc(
+    .clkp_8G_io(clkp_8G_io),
+    .clkn_8G_io(clkn_8G_io),
+    .data_p_io(data_p_io),
+    .data_n_io(data_n_io),
+
     .clk_28G(clk_25G),
     .rst_n(rst_n),
     .adc_ready(adc_ready),
