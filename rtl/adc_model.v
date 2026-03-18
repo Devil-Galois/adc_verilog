@@ -12,8 +12,14 @@ module adc_model#(
     parameter GAIN_CAL_WIDTH = 8, // gain calibration data width
     parameter DESKEW_CAL_WIDTH = 8 // deskew calibration data width
 )(
-    input wire clk_28G, // 28G clock input
+    input wire clk_28G, // internal 28G clock input
     input wire rst_n, // active low reset
+
+    input wire clkp_8G_io, // external 8G input +
+    input wire clkn_8G_io, // external 8G input -
+
+    input wire data_p_io, // input signal +
+    input wire data_n_io, // input signal -
 
     // timing control
     output reg adc_ready,   // reseting is done
